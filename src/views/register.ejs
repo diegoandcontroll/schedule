@@ -1,0 +1,65 @@
+<%- include('includes/head'); %>
+
+<%- include('includes/navbar'); %>
+
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1 class="display-3 text-center">
+        Login - Register
+      </h1>
+      <img src="/img/agenda.svg" alt="agenda" width="100" class="img-fluid my-5">
+    </div>
+  </div>
+  <%- include('includes/messages') %>
+  <div class="row mt-5">
+    <div class="col-5">
+      <h1 class="display-5">Login</h1>
+      <div id="login"></div>
+      <form action="/login/auth" method="POST" class="form-login">
+        <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password">
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-outline-info fw-bold">Sign in <i class="fas fa-sign-in-alt text-center"></i></button>
+        </div>
+        
+      </form>
+    </div>
+    <div class="col-2">
+      <div class="box">
+
+      </div>
+      <div class="box linha-vertical">
+      
+      </div>
+    </div>
+    <div class="col-5">
+      <h1 class="display-5">Register</h1>
+      <div id="register"></div>
+        <form action="/login/register" method="POST" class="form-register">
+          <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password">
+          </div>
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-outline-info fw-bold">Sign in <i class="fas fa-sign-in-alt text-center"></i></button>
+          </div>
+        </form>
+    </div>
+    
+  </div>
+ 
+</div>
+<%- include('includes/footer'); %>
